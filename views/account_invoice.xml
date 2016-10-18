@@ -1,0 +1,24 @@
+<openerp>
+  <data>
+  <record model="ir.ui.view" id="forma_pago_form_view">
+            <field name="name">account.invoice.forma_pago.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <field name='partner_id' position="after">
+                    <field name="payment_method"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="forma_pago_tree_view">
+            <field name="name">account.invoice.forma_pago.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree" />
+            <field name="arch" type="xml">
+                <field name='state' position="before">
+                    <field name="payment_method"/>
+                </field>
+            </field>
+        </record>
+  </data>
+</openerp>

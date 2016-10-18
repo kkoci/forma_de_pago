@@ -1,0 +1,34 @@
+<openerp>
+  <data>
+      <record id="view_forma_pago_form" model="ir.ui.view">
+          <field name="name">forma_pago.form</field>
+          <field name="model">forma_pago</field>
+          <field name="arch" type="xml">
+              <form string="Forma de Pago">
+                  <group>
+                    <field name="forma_de_pago"/>
+                  </group>
+              </form>
+          </field>
+      </record>
+
+      <record id="view_forma_pago_tree" model="ir.ui.view">
+          <field name="name">forma_pago.tree</field>
+          <field name="model">forma_pago</field>
+          <field name="arch" type="xml">
+              <tree string="Forma de Pago">
+                  <field name="forma_de_pago"/>
+              </tree>
+          </field>
+      </record>
+	  <record model="ir.actions.act_window" id="forma_pago_action">
+          <field name="name">Forma de Pago</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">forma_pago</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+ 
+    <menuitem name="Formas de Pago" action="forma_pago_action" id="menu_action_forma_pago_action" parent="account.menu_finance_configuration"/>
+  </data>
+</openerp>
